@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://b6wvkktmiq2uf"]
+
+[ext_resource type="Texture2D" uid="uid://cw7fxudlher07" path="res://fire tileset.png" id="1_2kq23"]
+[ext_resource type="Script" path="res://TileMap.gd" id="2_qj82u"]
+
+[sub_resource type="GDScript" id="GDScript_7ctv7"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4olhe"]
+texture = ExtResource("1_2kq23")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ni04w"]
+sources/0 = SubResource("TileSetAtlasSource_4olhe")
+
+[node name="Node2D" type="Node2D"]
+script = SubResource("GDScript_7ctv7")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_ni04w")
+format = 2
+script = ExtResource("2_qj82u")
